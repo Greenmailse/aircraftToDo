@@ -9,37 +9,43 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/headerTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="To-Do"
-        android:textColor="#000"
+        android:textColor="#2f2f2f"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
+    <ImageView
+        android:id="@+id/headerSettings"
         android:layout_width="wrap_content"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Settings"
+        android:layout_marginEnd="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:rotation="0"
+        android:src="@drawable/ic_settings_black_24dp"
+        android:tint="#454545"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
+    <ImageView
+        android:id="@+id/headerFilter"
         android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Search"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:src="@drawable/ic_sort_black_24dp"
+        android:tint="#454545"
+        app:layout_constraintEnd_toStartOf="@+id/headerSettings"
+        app:layout_constraintTop_toTopOf="@+id/headerSettings" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
@@ -49,43 +55,81 @@
         android:paddingBottom="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/headerTitle">
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/button_press"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="Home"
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/button_press"
-            android:gravity="center_vertical|center_horizontal|center"
-            android:text="Work"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button6"
-            app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/button_press"
-            android:gravity="center_vertical|center_horizontal|center"
-            android:text="Hobby"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button5"
-            app:layout_constraintTop_toTopOf="parent" />
+                <FrameLayout
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:clickable="true"
+                        android:src="@drawable/ic_weekend_black_24dp"
+                        android:tint="#454545" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="6dp"
+                        android:gravity="bottom"
+                        android:text="Home"
+                        android:textColor="#454545"
+                        android:textSize="10sp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:clickable="true"
+                        android:src="@drawable/ic_add_black_24dp"
+                        android:tint="#454545"
+                        tools:background="?attr/selectableItemBackgroundBorderless" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="6dp"
+                        android:gravity="bottom"
+                        android:text="New group"
+                        android:textColor="#454545"
+                        android:textSize="10sp" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

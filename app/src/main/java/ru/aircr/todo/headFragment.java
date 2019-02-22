@@ -1,5 +1,6 @@
 package ru.aircr.todo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 
 /**
@@ -18,6 +20,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class headFragment extends Fragment {
+
+    private ImageView btnSettings;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,6 +37,8 @@ public class headFragment extends Fragment {
     public headFragment() {
         // Required empty public constructor
     }
+
+
 
     /**
      * Use this factory method to create a new instance of
@@ -58,13 +65,23 @@ public class headFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_head, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_head, container, false);
+        btnSettings = (ImageView) view.findViewById(R.id.headerSettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnSettings.setRotation(btnSettings.getRotation()+20);
+            }
+        });
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -83,6 +100,8 @@ public class headFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+
+
     }
 
     @Override
