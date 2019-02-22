@@ -27,7 +27,14 @@ public class MainActivity extends AppCompatActivity implements headFragment.OnFr
         demoData[1] = "Купить нарКОТИКОВ";
         demoData[2] = "Крикнуть в носок";
         demoData[4] = "Продать пойманных пчёл";
+        demoData[5] = "Взломать гексагон";
+        demoData[6] = "Растопить мороженное";
+        demoData[7] = "Разукрасить свет";
+        demoData[8] = "Помыть моющее средство";
+        demoData[9] = "Разрезать пыль под шкафом";
         demoData[10] = "Зарядить розетку";
+        demoData[11] = "Сфоткать фотки";
+        demoData[12] = "Одеть надежду";
         demoData[16] = "Вспомнить бога";
         demoData[24] = "Покормить лес";
 
